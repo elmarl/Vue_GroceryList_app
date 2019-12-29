@@ -5,7 +5,6 @@
         {{GroceryItem.title}}
         <button class="del" @click="$emit('del-GroceryItem', GroceryItem.id)">Remove</button>
         </p>
-      
     </div>
 </template>
 
