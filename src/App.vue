@@ -10,6 +10,7 @@
 import HeaderComp from './components/layout/HeaderComp'
 import AddGroceryItemComp from './components/AddGroceryItemComp'
 import GroceryItemsComp from './components/GroceryItemsComp'
+import axios from 'axios'
 export default {
   name: 'app',
   components: {
@@ -19,36 +20,26 @@ export default {
   },
 data: function(){
   return{
-    GroceryList: [
-      {
-        id: 1,
-        title: "Milk",
-        quantity: "1 liter",
-        completed: false
-      },
-      {
-        id: 2,
-        title: "Eggs",
-        quantity: "3",
-        completed: true
-      },
-      {
-        id: 3,
-        title: "Fries",
-        quantity: "1 kg",
-        completed: true
-      }
-    ]
+    GroceryList: []
   }
 },
 methods:{
-  deleteGroceryItem(id){
-    this.GroceryList = this.GroceryList.filter(GroceryItem => GroceryItem.id !== id);
+    deleteGroceryItem(id){
+      this.GroceryList = this.GroceryList.filter(GroceryItem => GroceryItem.id !== id);
+    },
+    addGrocery(grocery){
+      const {title, completed} = grocery;
+      axios.post("https://jsonplaceholder.typicode.com/todos", {title, completed})
+      .then(res => this.GroceryList = [...this.GroceryList, res.data])
+      .catch(err=>alert(err))
+     //this.GroceryList = [...this.GroceryList, grocery];
+    }
   },
-  addGrocery(grocery){
-    this.GroceryList = [...this.GroceryList, grocery];
+  created(){
+    axios.get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+    .then(res => this.GroceryList = res.data)
+    .catch(err => alert(err))
   }
-}
 }
 </script>
 <style>

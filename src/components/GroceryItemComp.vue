@@ -3,7 +3,7 @@
       <p>
         <input type="checkbox" v-on:change="markComplete">
         {{GroceryItem.title}}
-        <button class="del" @click="$emit('del-GroceryItem', GroceryItem.id)">Rem</button>
+        <button class="del" @click="$emit('del-GroceryItem', GroceryItem.id)">Remove</button>
         </p>
       
     </div>
@@ -34,7 +34,7 @@ export default {
 }
 .del {
 background-color:#ff5c407a;
-border-radius: 50%;
+border-radius: 30%;
 display: inline-block;
 border: none;
 

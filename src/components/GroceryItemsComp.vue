@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .G {
-  background-color: rgba(255, 220, 194, 0.61);
+  background-color: rgba(228, 228, 228, 0.61);
   border-bottom-style:dashed;
   border-bottom-width: 1px;
   border-bottom-color: rgb(83, 83, 83);
