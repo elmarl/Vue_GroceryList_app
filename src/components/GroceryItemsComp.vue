@@ -3,7 +3,7 @@
     <div>
         <div v-bind:key="GroceryItem.id" v-for="GroceryItem in GroceryList">
             <!--<h1>{{GroceryItem.title}}</h1>-->
-            <GroceryItemComp class="G" v-bind:GroceryItem="GroceryItem" v-on:del-GroceryItem="$emit('del-GroceryItem', GroceryItem.id)"/>
+            <GroceryItemComp class="grc" v-bind:GroceryItem="GroceryItem" v-on:del-GroceryItem="$emit('del-GroceryItem', GroceryItem.id)"/>
        </div>
     </div>
 </template>
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped>
-.G {
+.grc {
   background-color: rgba(228, 228, 228, 0.61);
   border-bottom-style:dashed;
   border-bottom-width: 1px;

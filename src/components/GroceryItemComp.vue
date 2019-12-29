@@ -1,8 +1,8 @@
 <template>
-    <div class="todo-item" v-bind:class="{'completed':GroceryItem.completed}" >
+    <div class="grc-item" v-bind:class="{'completed':GroceryItem.completed}" >
       <p>
-        <input type="checkbox" v-on:change="markComplete" v-model="GroceryItem.completed">
-        {{GroceryItem.title}}
+        <input type="checkbox" v-on:change="markComplete" :checked="GroceryItem.completed">
+        <span class="title">{{GroceryItem.title}}</span>
         <button class="del" @click="$emit('del-GroceryItem', GroceryItem.id)">Remove</button>
         </p>
     </div>
@@ -23,7 +23,14 @@ export default {
 </script>
 
 <style scoped>
-.todo-item {
+p{
+  align-content: flex-start;
+}
+.title{
+margin-left: 5px;
+}
+.grc-item {
+  display: flex;
   background: white;
   padding: 10px;
   border-bottom: line-through;
@@ -35,7 +42,7 @@ export default {
 background-color:#ff5c407a;
 border-radius: 30%;
 display: inline-block;
+margin-left: 5px;
 border: none;
-
 }
 </style>

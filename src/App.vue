@@ -9,7 +9,7 @@ import HeaderComp from './components/layout/HeaderComp'
 export default {
    name: 'App',
   components: {
-    HeaderComp,
+    HeaderComp
   }
 }
 </script>

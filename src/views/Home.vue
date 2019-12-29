@@ -22,18 +22,19 @@ data: function(){
 },
 methods:{
     deleteGroceryItem(id){
-      this.GroceryList = this.GroceryList.filter(GroceryItem => GroceryItem.id !== id);
+      axios.delete(`https://my-json-server.typicode.com/elmarl/grocery_list/groceries/${id}`)
+      .then(res => this.GroceryList = this.GroceryList.filter(GroceryItem => GroceryItem.id !== id, res.data))
+      .catch(err => alert(err))
     },
     addGrocery(grocery){
       const {title, completed} = grocery;
-      axios.post("https://jsonplaceholder.typicode.com/todos", {title, completed})
+      axios.post("https://my-json-server.typicode.com/elmarl/grocery_list/groceries", {title, completed})
       .then(res => this.GroceryList = [...this.GroceryList, res.data])
       .catch(err=>alert(err))
-     //this.GroceryList = [...this.GroceryList, grocery];
     }
   },
   created(){
-    axios.get("https://jsonplaceholder.typicode.com/todos?_limit=5")
+    axios.get("https://my-json-server.typicode.com/elmarl/grocery_list/groceries")
     .then(res => this.GroceryList = res.data)
     .catch(err => alert(err))
   }

@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h3>The greatest ever grocery list app to use when shopping!</h3>
   </div>
 </template>
