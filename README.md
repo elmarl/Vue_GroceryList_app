@@ -1,1 +1,2 @@
-Small list editing app in Vue, hosted using netlify at: https://vigilant-sammet-ce23e8.netlify.com/#/
+Grocery list editing app in Vue, built and hosted using netlify at: https://vigilant-sammet-ce23e8.netlify.com/#/
+coded in parallel of Traversy Medias Vue tutorial, with additional features such as fixed checkboxes (checked, if GET returns a groceryitem that has completed:true), custom design (for the submit button - https://www.bestcssbuttongenerator.com/), custom fake online REST API using https://jsonplaceholder.typicode.com/ and deployment usig netlify. A deployment branch on github was used to build and deploy on netlify.
