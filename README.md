@@ -11,3 +11,5 @@ Install project with following npm command (yarn would be similar):
 Launch the app and serve it on port 8080:
       
       npm run serve
+
+App will use a github repo (https://github.com/elmarl/grocery_list/) over REST for persistance, using axios.
